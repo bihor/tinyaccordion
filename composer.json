@@ -1,0 +1,30 @@
+{
+	"name" : "quizpalme/tinyaccordion",
+	"type" : "typo3-cms-extension",
+	"description" : "JavaScript Accordion based on TinyAccordion.",
+	"authors" : [{
+			"name" : "Kurt Gusbeth",
+			"role" : "Developer"
+		}
+	],
+	"require" : {
+		"typo3/cms-core" : "~9.5.20 || ~10.4.6"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"Quizpalme\\Tinyaccordion\\" : "Classes"
+		}
+	},
+	"replace" : {
+		"typo3-ter/tinyaccordion" : "self.version"
+	},
+	"homepage" : "https://www.fixpunkt.com/webentwicklung/typo3/typo3-extensions/",
+	"support" : {
+		"email" : "info@quizpalme.de"
+	},
+	"license" : "GPL-3.0+",
+	"keywords" : [
+		"Accordion",
+		"TinyAccordion"
+	]
+}
