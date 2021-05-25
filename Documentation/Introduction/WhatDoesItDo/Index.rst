@@ -49,4 +49,4 @@ Attention
 
 .. important::
 
-   If you are using TYPO3 9 and an version below 7, then you will need the extension typo3db_legacy too!
+   If you are using TYPO3 9 and a version below 7, then you will need the extension typo3db_legacy too!

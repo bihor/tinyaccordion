@@ -208,4 +208,6 @@ ChangeLog
    Changes
          Runs now with composer too.
 
+         Documentation update.
+
 .. ###### END~OF~TABLE ######

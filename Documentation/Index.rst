@@ -22,7 +22,7 @@ Extension Key: tinyaccordion
 
 Keywords: accordion, content, elements
 
-Copyright 2017, Kurt Gusbeth, <info@quizpalme.de>
+Copyright 2021, Kurt Gusbeth, <info@quizpalme.de>
 
 This document is published under the Open Content License
 
@@ -41,7 +41,6 @@ The content of this document is related to TYPO3
    Configuration/Index
    Tutorial/Index
    KnownProblems/Index
-   Updating/Index
    Updating4/Index
    Updating5/Index
    Updating6/Index

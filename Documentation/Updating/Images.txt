@@ -1,5 +1,0 @@
-﻿.. |img-9|      image:: ../Images/manual_html_m5c86d2d.png
-.. :align: left
-.. :border: 0
-.. :name: Grafik7
-.. :width: 100%

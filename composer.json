@@ -26,5 +26,10 @@
 	"keywords" : [
 		"Accordion",
 		"TinyAccordion"
-	]
+	],
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "ke_search"
+		}
+	}
 }

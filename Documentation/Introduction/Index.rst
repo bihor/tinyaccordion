@@ -26,4 +26,3 @@ Introduction
 
    WhatDoesItDo/Index
    Screenshots/Index
-
