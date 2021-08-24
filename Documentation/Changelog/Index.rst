@@ -210,4 +210,14 @@ ChangeLog
 
          Documentation update.
 
+.. container:: table-row
+
+   Version
+         7.2.0
+
+   Changes
+         Runs now with TYPO3 10 and 11.3.
+
+         Bugfix: news template.
+
 .. ###### END~OF~TABLE ######

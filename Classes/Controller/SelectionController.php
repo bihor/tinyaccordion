@@ -347,7 +347,6 @@ class SelectionController extends ActionController
         $pidsArray = explode(',', $pids);
         $dataArray = [];
         $noData = true;
-        $childs = 0;
         $order = ($this->settings['flexform']['sortorder']=='desc') ? 'DESC' : 'ASC';
         $mode = ($this->settings['flexform']['sortMode']=='1') ? true : false;
         if ($mode) {
@@ -361,7 +360,7 @@ class SelectionController extends ActionController
             $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tx_news_domain_model_news');
             $statement = $queryBuilder
             ->select('tx_news_domain_model_news.uid AS newsid', 'tx_news_domain_model_news.title AS newstitle', 'tx_news_domain_model_news.datetime AS newsdate',
-                'cat.uid AS catid', 'cat.title AS cattitle')
+                'bodytext', 'cat.uid AS catid', 'cat.title AS cattitle')
             ->from('tx_news_domain_model_news')
             ->leftJoin(
                 'tx_news_domain_model_news',
@@ -407,23 +406,14 @@ class SelectionController extends ActionController
                 $dataArray[$row['catid']]['news'][$row['newsid']] = [];
                 $dataArray[$row['catid']]['news'][$row['newsid']]['header'] = $row['newstitle'];
                 $dataArray[$row['catid']]['news'][$row['newsid']]['datetime'] = $row['newsdate'];
+                $dataArray[$row['catid']]['news'][$row['newsid']]['bodytext'] = $row['bodytext'];
                 $noData = false;
-            }
-        }
-
-        // Dokumente rendern
-        if (count($dataArray)>0) {
-            foreach ($dataArray as $uid => $value) {
-                $childs++;
-                foreach ($dataArray[$uid]['news'] as $newsid => $newsvalue) {
-                    $dataArray[$uid]['news'][$newsid]['bodytext'] = $this->myRender('tx_news_domain_model_news', $newsid);
-                }
             }
         }
 
         $this->view->assign('elements', $dataArray);
         $this->view->assign('nodata', $noData);
-        $this->view->assign('childs', $childs);
+        $this->view->assign('childs', count($dataArray));
         $this->view->assign('uid', $this->cObj->data['uid']);
         $this->view->assign('pids', $pidsArray);
     }

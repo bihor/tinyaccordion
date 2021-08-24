@@ -18,7 +18,7 @@
 			  <f:for each="{element.news}" as="news">
 			  	<li class="acc-li">
 			  		<{settings.flexform.header2}>{news.header}</{settings.flexform.header2}>
-					<div class="acc-section"><f:format.raw>{news.bodytext}</f:format.raw></div>
+					<div class="acc-section"><f:format.html>{news.bodytext}</f:format.html></div>
 				</li>
 			  </f:for>
 			</ul>

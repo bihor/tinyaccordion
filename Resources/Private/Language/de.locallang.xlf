@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2021-08-24T08:44:17Z" product-name="tinyaccordion">
+		<header/>
+		<body>
+			<trans-unit id="tx_tinyaccordion_domain_model_auswahl" xml:space="preserve" approved="yes">
+				<source>Selection</source>
+				<target>Auswahl</target>
+			</trans-unit>
+			<trans-unit id="click" xml:space="preserve" approved="yes">
+				<source>click here</source>
+				<target>hier klicken</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

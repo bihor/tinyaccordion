@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" datatype="plaintext" original="messages" date="2021-08-24T08:44:57Z" product-name="tinyaccordion">
+		<header/>
+		<body>
+			<trans-unit id="tinyaccordion_title" xml:space="preserve">
+				<source>TinyAccordion</source>
+			</trans-unit>
+			<trans-unit id="tinyaccordion_plus_wiz_description" xml:space="preserve">
+				<source>Extension to display tt_content or news elements as an Accordion.</source>
+			</trans-unit>
+			<trans-unit id="flexforms_tab.settings" xml:space="preserve">
+				<source>Settings</source>
+			</trans-unit>
+			<trans-unit id="flexforms_tab.level1" xml:space="preserve">
+				<source>Level 1</source>
+			</trans-unit>
+			<trans-unit id="flexforms_tab.level2" xml:space="preserve">
+				<source>Level 2</source>
+			</trans-unit>
+			<trans-unit id="flexforms_general.mode" xml:space="preserve">
+				<source>What to display</source>
+			</trans-unit>
+			<trans-unit id="flexforms_general.sort" xml:space="preserve">
+				<source>Order direction</source>
+			</trans-unit>
+			<trans-unit id="flexforms_general.sortMode" xml:space="preserve">
+				<source>First sort by selected pages?</source>
+			</trans-unit>
+			<trans-unit id="flexforms_general.ascending" xml:space="preserve">
+				<source>ascending</source>
+			</trans-unit>
+			<trans-unit id="flexforms_general.descending" xml:space="preserve">
+				<source>descending</source>
+			</trans-unit>
+			<trans-unit id="flexforms_general.header" xml:space="preserve">
+				<source>Header</source>
+			</trans-unit>
+			<trans-unit id="flexforms_general.expandable" xml:space="preserve">
+				<source>Should the panel be expandable independently?</source>
+			</trans-unit>
+			<trans-unit id="flexforms_general.select" xml:space="preserve">
+				<source>pages: use the pid or uid when selecting from pages?</source>
+			</trans-unit>
+			<trans-unit id="flexforms_general.pid" xml:space="preserve">
+				<source>select childs (pid)</source>
+			</trans-unit>
+			<trans-unit id="flexforms_general.uid" xml:space="preserve">
+				<source>select elements themself (uid)</source>
+			</trans-unit>
+			<trans-unit id="flexforms_general.nested" xml:space="preserve">
+				<source>pages: show nested elements when selecting from pages pages?</source>
+			</trans-unit>
+			<trans-unit id="flexforms_general.renderEverything" xml:space="preserve">
+				<source>tt_content: render all elements (yes) or only text- and text-image-elements?</source>
+			</trans-unit>
+			<trans-unit id="flexforms_general.colPos" xml:space="preserve">
+				<source>tt_content: colPos-column (-1 = all columns)</source>
+			</trans-unit>
+			<trans-unit id="flexforms_general.no" xml:space="preserve">
+				<source>no</source>
+			</trans-unit>
+			<trans-unit id="flexforms_general.yes" xml:space="preserve">
+				<source>yes</source>
+			</trans-unit>
+			<trans-unit id="flexforms_general.index" xml:space="preserve">
+				<source>Index of the initially expanded section</source>
+			</trans-unit>
+			<trans-unit id="flexforms_general.none" xml:space="preserve">
+				<source>none</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

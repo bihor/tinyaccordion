@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2021-08-24T08:44:57Z" product-name="tinyaccordion">
+		<header/>
+		<body>
+			<trans-unit id="tinyaccordion_title" xml:space="preserve" approved="yes">
+				<source>TinyAccordion</source>
+				<target>TinyAccordion</target>
+			</trans-unit>
+			<trans-unit id="tinyaccordion_plus_wiz_description" xml:space="preserve" approved="yes">
+				<source>Extension to display tt_content or news elements as an Accordion.</source>
+				<target>Extension zum anzeigen von tt_content- oder news-Elementen als ein Accordion.</target>
+			</trans-unit>
+			<trans-unit id="flexforms_tab.settings" xml:space="preserve" approved="yes">
+				<source>Settings</source>
+				<target>Einstellungen</target>
+			</trans-unit>
+			<trans-unit id="flexforms_tab.level1" xml:space="preserve" approved="yes">
+				<source>Level 1</source>
+				<target>Ebene 1</target>
+			</trans-unit>
+			<trans-unit id="flexforms_tab.level2" xml:space="preserve" approved="yes">
+				<source>Level 2</source>
+				<target>Ebene 2</target>
+			</trans-unit>
+			<trans-unit id="flexforms_general.mode" xml:space="preserve" approved="yes">
+				<source>What to display</source>
+				<target>Was soll angezeigt werden?</target>
+			</trans-unit>
+			<trans-unit id="flexforms_general.sort" xml:space="preserve" approved="yes">
+				<source>Order direction</source>
+				<target>Sortierreihenfolge</target>
+			</trans-unit>
+			<trans-unit id="flexforms_general.sortMode" xml:space="preserve" approved="yes">
+				<source>First sort by selected pages?</source>
+				<target>Zuerst nach den ausgewählten Seiten sortieren?</target>
+			</trans-unit>
+			<trans-unit id="flexforms_general.ascending" xml:space="preserve" approved="yes">
+				<source>ascending</source>
+				<target>aufsteigend</target>
+			</trans-unit>
+			<trans-unit id="flexforms_general.descending" xml:space="preserve" approved="yes">
+				<source>descending</source>
+				<target>absteigend</target>
+			</trans-unit>
+			<trans-unit id="flexforms_general.header" xml:space="preserve" approved="yes">
+				<source>Header</source>
+				<target>Überschrift</target>
+			</trans-unit>
+			<trans-unit id="flexforms_general.expandable" xml:space="preserve" approved="yes">
+				<source>Should the panel be expandable independently?</source>
+				<target>Immer nur max. 1 Panel offen halten?</target>
+			</trans-unit>
+			<trans-unit id="flexforms_general.select" xml:space="preserve" approved="yes">
+				<source>pages: use the pid or uid when selecting from pages?</source>
+				<target>Bei pages: die ausgesuchten Seiten oder deren Kinder holen?</target>
+			</trans-unit>
+			<trans-unit id="flexforms_general.pid" xml:space="preserve" approved="yes">
+				<source>select childs (pid)</source>
+				<target>suche die Kinder (pid)</target>
+			</trans-unit>
+			<trans-unit id="flexforms_general.uid" xml:space="preserve" approved="yes">
+				<source>select elements themself (uid)</source>
+				<target>suche die Seiten selbst (uid)</target>
+			</trans-unit>
+			<trans-unit id="flexforms_general.nested" xml:space="preserve" approved="yes">
+				<source>pages: show nested elements when selecting from pages pages?</source>
+				<target>Bei pages: verschachtele die Elemente einer Seite?</target>
+			</trans-unit>
+			<trans-unit id="flexforms_general.renderEverything" xml:space="preserve" approved="yes">
+				<source>tt_content: render all elements (yes) or only text- and text-image-elements?</source>
+				<target>Bei tt_content: alles holen (ja) oder nur Text- und Bild-Elemente (nein)?</target>
+			</trans-unit>
+			<trans-unit id="flexforms_general.colPos" xml:space="preserve" approved="yes">
+				<source>tt_content: colPos-column (-1 = all columns)</source>
+				<target>Bei tt_content: colPos-Spalte (-1 = alle Spalten)</target>
+			</trans-unit>
+			<trans-unit id="flexforms_general.no" xml:space="preserve" approved="yes">
+				<source>no</source>
+				<target>nein</target>
+			</trans-unit>
+			<trans-unit id="flexforms_general.yes" xml:space="preserve" approved="yes">
+				<source>yes</source>
+				<target>ja</target>
+			</trans-unit>
+			<trans-unit id="flexforms_general.index" xml:space="preserve" approved="yes">
+				<source>Index of the initially expanded section</source>
+				<target>Welches Element soll am Anfang offen sein?</target>
+			</trans-unit>
+			<trans-unit id="flexforms_general.none" xml:space="preserve" approved="yes">
+				<source>none</source>
+				<target>keines</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

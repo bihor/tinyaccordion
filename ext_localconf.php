@@ -7,10 +7,10 @@ call_user_func(
             'Quizpalme.Tinyaccordion',
             'Pi1',
             [
-                'Selection' => 'content, content_ui_accordion, news, news_ui_accordion, camaliga, camaliga_ui_accordion, page, page_ui_accordion'
+                \Quizpalme\Tinyaccordion\Controller\SelectionController::class => 'content, content_ui_accordion, news, news_ui_accordion, camaliga, camaliga_ui_accordion, page, page_ui_accordion'
             ],
             [
-                'Selection' => ''
+                \Quizpalme\Tinyaccordion\Controller\SelectionController::class => ''
             ]
         );
 
