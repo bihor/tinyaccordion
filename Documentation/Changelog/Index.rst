@@ -213,10 +213,10 @@ ChangeLog
 .. container:: table-row
 
    Version
-         7.2.0
+         7.2.1
 
    Changes
-         Runs now with TYPO3 10 and 11.3.
+         Runs now with TYPO3 10 and 11.
 
          Can display now table elements too.
 
