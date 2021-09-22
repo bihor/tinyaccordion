@@ -100,4 +100,3 @@ class AddPublicResourcesViewHelper extends AbstractViewHelper
 			}
 	}
 }
-?>

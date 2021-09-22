@@ -218,6 +218,8 @@ ChangeLog
    Changes
          Runs now with TYPO3 10 and 11.3.
 
+         Can display now table elements too.
+
          Bugfix: news template.
 
 .. ###### END~OF~TABLE ######

@@ -18,18 +18,18 @@
 What does it do?
 ^^^^^^^^^^^^^^^^
 
-A very easy to use extension to display content elements (tt\_content), pages and content elements,
-news elements or Camaliga elements as an accordion. Put some text-content-
-elements (with pictures), news-records or Camaliga elements into a folder and this
+A very easy to use extension to display content elements (tt\_content), pages and content elements or
+news elements as an accordion. Put some text-content-
+elements (with pictures) or news-records into a folder and this
 extension will display them all as an accordion. The extension is
 flexible too, because it can be configured and you can use other
 JavaScript plugins too (e.g. jQuery UI Accordion).
+Supported tt\_content elements: text, textpic, textmedia and table.
 By default every template can be used with TinyAccordion or jQuery UI Accordion (you need to include this file by your own).
 Could be used for FAQs. It uses the TinyAccordion-JavaScript file from a website, that does not exist anymore.
 You find a demo here:
 
-`http://www.quizpalme.de/faq.html
-<http://www.quizpalme.de/faq.html>`_
+`www.quizpalme.de/faq <https://www.quizpalme.de/faq>`_
 
 Thanks to...
 ------------

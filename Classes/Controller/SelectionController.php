@@ -145,6 +145,7 @@ class SelectionController extends ActionController
                 $queryBuilder->andWhere(
                     $queryBuilder->expr()->orX(
                         $queryBuilder->expr()->eq('CType', $queryBuilder->createNamedParameter('text')),
+                        $queryBuilder->expr()->eq('CType', $queryBuilder->createNamedParameter('table')),
                         $queryBuilder->expr()->eq('CType', $queryBuilder->createNamedParameter('textpic')),
                         $queryBuilder->expr()->eq('CType', $queryBuilder->createNamedParameter('textmedia'))
                     )
@@ -289,6 +290,7 @@ class SelectionController extends ActionController
             $queryBuilder->andWhere(
                 $queryBuilder->expr()->orX(
                     $queryBuilder->expr()->eq('CType', $queryBuilder->createNamedParameter('text')),
+                    $queryBuilder->expr()->eq('CType', $queryBuilder->createNamedParameter('table')),
                     $queryBuilder->expr()->eq('CType', $queryBuilder->createNamedParameter('textpic')),
                     $queryBuilder->expr()->eq('CType', $queryBuilder->createNamedParameter('textmedia'))
                 )
