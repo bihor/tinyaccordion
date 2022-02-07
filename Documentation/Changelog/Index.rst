@@ -216,10 +216,22 @@ ChangeLog
          7.2.1
 
    Changes
-         Runs now with TYPO3 10 and 11.
+         Runs now with TYPO3 10 and 11.3.
 
          Can display now table elements too.
 
          Bugfix: news template.
+
+.. container:: table-row
+
+   Version
+         7.3.0
+
+   Changes
+         Runs now with TYPO3 11.5 too.
+
+         Directory Scripts renamed to JavaScript.
+
+         Replacement of the Viewhelper tiny:addPublicResources. It is now deprecated. Use f:asset.script instead.
 
 .. ###### END~OF~TABLE ######

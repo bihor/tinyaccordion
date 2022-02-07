@@ -1,6 +1,6 @@
 # tinyaccordion
 
-version 7.2.2
+version 7.3.0
 
 JavaScript Accordion based on TinyAccordion.
 
