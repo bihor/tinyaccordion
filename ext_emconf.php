@@ -11,10 +11,10 @@
  ***************************************************************/
 
 $EM_CONF[$_EXTKEY] = array (
-  'title' => 'JavaScript Accordion based on TinyAccordion.',
-  'description' => 'An easy to use extension to display pages, tt_content or news elements as an Accordion. Runs with TinyAccordion or jQuery UI-Accordion.',
+  'title' => 'JavaScript Accordion based on TinyAccordion',
+  'description' => 'An easy-to-use extension to display pages, tt_content or news elements as an Accordion. Runs with TinyAccordion or jQuery UI-Accordion.',
   'category' => 'plugin',
-  'version' => '7.2.1',
+  'version' => '7.2.2',
   'state' => 'stable',
   'uploadfolder' => false,
   'createDirs' => '',
