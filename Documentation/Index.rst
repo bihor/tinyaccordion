@@ -22,11 +22,11 @@ Extension Key: tinyaccordion
 
 Keywords: accordion, content, elements
 
-Copyright 2021, Kurt Gusbeth, <info@quizpalme.de>
+Copyright 2022, Kurt Gusbeth
 
 This document is published under the Open Content License
 
-available from http://www.opencontent.org/opl.shtml
+available from https://www.opencontent.org/opl.shtml
 
 The content of this document is related to TYPO3
 

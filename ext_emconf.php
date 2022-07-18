@@ -19,7 +19,6 @@ $EM_CONF[$_EXTKEY] = array (
   'createDirs' => '',
   'clearcacheonload' => false,
   'author' => 'Kurt Gusbeth',
-  'author_email' => 'info@quizpalme.de',
   'author_company' => 'fixpunkt werbeagentur gmbh',
   'constraints' => 
   array (
