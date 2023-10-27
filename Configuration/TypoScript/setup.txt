@@ -17,10 +17,6 @@ plugin.tx_tinyaccordion {
 		storagePid =
 	}
 	settings {
-		# Not in use (configure it via page.includeJS):
-		# jsFile = {$plugin.tx_tinyaccordion.settings.jsFile}
-		# Not in use (configure it via FlexForms):
-		# table = tt_content
 		# The following settings are needed only for the initial step
 		flexform.header1 = h4
 		flexform.expandable1 = 0

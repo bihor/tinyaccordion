@@ -9,6 +9,8 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Connection;
+use Psr\Http\Message\ResponseInterface;
+
 
 /***************************************************************
  *  Copyright notice
@@ -57,7 +59,7 @@ class SelectionController extends ActionController
             'source' => $uid,
             'dontCheckPid' => 1
         ];
-        return $this->objectManager->get('TYPO3\CMS\Frontend\ContentObject\RecordsContentObject')->render($conf);
+        return $GLOBALS['TSFE']->cObj->cObjGetSingle('RECORDS', $conf);
     }
 
     /**
@@ -92,8 +94,9 @@ class SelectionController extends ActionController
 
     /**
      * action content
-     */
-    public function contentAction()
+     *
+     * @return ResponseInterface  */
+    public function contentAction(): ResponseInterface
     {
         $pids = $this->getPidAndInit();
         $languageAspect = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Context\Context::class)->getAspect('language');
@@ -180,20 +183,23 @@ class SelectionController extends ActionController
         $this->view->assign('nodata', $noData);
         $this->view->assign('uid', $this->cObj->data['uid']);
         $this->view->assign('pids', $pidsArray);
+        return $this->htmlResponse();
     }
 
     /**
      * action tt_content + UI
-     */
-    public function content_ui_accordionAction()
+     *
+     * @return ResponseInterface  */
+    public function content_ui_accordionAction(): ResponseInterface
     {
         $this->contentAction();
     }
 
     /**
      * action pages
-     */
-    public function pagesAction()
+     *
+     * @return ResponseInterface  */
+    public function pagesAction(): ResponseInterface
     {
         $pids = $this->getPidAndInit();
         $languageAspect = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Context\Context::class)->getAspect('language');
@@ -328,20 +334,23 @@ class SelectionController extends ActionController
         $this->view->assign('nodata', $noData);
         $this->view->assign('uid', $this->cObj->data['uid']);
         $this->view->assign('pids', $pidsArray);
+        return $this->htmlResponse();
     }
 
     /**
      * action pages + UI
-     */
-    public function pages_ui_accordionAction()
+     *
+     * @return ResponseInterface  */
+    public function pages_ui_accordionAction(): ResponseInterface
     {
         $this->pagesAction();
     }
 
     /**
      * action news
-     */
-    public function newsAction()
+     *
+     * @return ResponseInterface  */
+    public function newsAction(): ResponseInterface
     {
         $pids = $this->getPidAndInit();
         $languageAspect = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Context\Context::class)->getAspect('language');
@@ -418,111 +427,15 @@ class SelectionController extends ActionController
         $this->view->assign('childs', count($dataArray));
         $this->view->assign('uid', $this->cObj->data['uid']);
         $this->view->assign('pids', $pidsArray);
+        return $this->htmlResponse();
     }
 
     /**
      * action news + UI
-     */
-    public function news_ui_accordionAction()
+     *
+     * @return ResponseInterface  */
+    public function news_ui_accordionAction(): ResponseInterface
     {
         $this->newsAction();
-    }
-
-    /**
-     * action news
-     */
-    public function camaligaAction()
-    {
-        $pids = $this->getPidAndInit();
-        $languageAspect = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Context\Context::class)->getAspect('language');
-        $sys_language_uid = intval($languageAspect->getId());
-        $pidsArray = explode(',', $pids);
-        $dataArray = [];
-        $noData = true;
-        $childs = 0;
-        $order = ($this->settings['flexform']['sortorder']=='desc') ? 'DESC' : 'ASC';
-        $mode = ($this->settings['flexform']['sortMode']=='1') ? true : false;
-        if ($mode) {
-            $pidsForeach = $pidsArray;
-        } else {
-            $pidsForeach = [$pids];
-        }
-
-        foreach ($pidsForeach as $pid) {
-            if ($mode) {
-                $wherePid = 'pid=' . intval($pid);
-            } else {
-                $wherePid = 'pid IN (' . $pid . ')';
-            }
-            // Camaliga-Elemente+Kategorien holen
-            $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tx_camaliga_domain_model_content');
-            $statement = $queryBuilder
-            ->select('tx_camaliga_domain_model_content.uid AS camid', 'tx_camaliga_domain_model_content.title AS camtitle', 'tx_camaliga_domain_model_content.shortdesc', 
-                'tx_camaliga_domain_model_content.longdesc', 'tx_camaliga_domain_model_content.link', 'cat.uid AS catid', 'cat.title AS cattitle')
-            ->from('tx_camaliga_domain_model_content')
-            ->leftJoin(
-                'tx_camaliga_domain_model_content',
-                'sys_category_record_mm',
-                'mm',
-                $queryBuilder->expr()->eq(
-                    'mm.uid_foreign',
-                    $queryBuilder->quoteIdentifier('tx_camaliga_domain_model_content.uid')
-                )
-            )
-            ->leftJoin(
-                'mm',
-                'sys_category',
-                'cat',
-                $queryBuilder->expr()->eq(
-                    'mm.uid_local',
-                    $queryBuilder->quoteIdentifier('cat.uid')
-                )
-            );
-                    
-            if ($mode) {
-                $queryBuilder->where(
-                    $queryBuilder->expr()->eq('tx_camaliga_domain_model_content.pid', $queryBuilder->createNamedParameter(intval($pid), \PDO::PARAM_INT))
-                );
-            } else {
-                $queryBuilder->where(
-                    $queryBuilder->expr()->in('tx_camaliga_domain_model_content.pid', $queryBuilder->createNamedParameter($pidsArray, Connection::PARAM_INT_ARRAY))
-                );
-            }
-            $queryBuilder->andWhere(
-                $queryBuilder->expr()->eq('tx_camaliga_domain_model_content.sys_language_uid', $queryBuilder->createNamedParameter($sys_language_uid, \PDO::PARAM_INT))
-            );
-            $queryBuilder->orderBy('tx_camaliga_domain_model_content.sorting', $order);
-            //debug($queryBuilder->getSQL());
-            $statement = $queryBuilder->execute();
-                
-            while ($row = $statement->fetch()) {
-                if (!is_array($dataArray[$row['catid']])) {
-                    $dataArray[$row['catid']] = [];
-                    $dataArray[$row['catid']]['camaliga'] = [];
-                }
-                $camid = $row['camid'];
-                $dataArray[$row['catid']]['header'] = $row['cattitle'];
-                $dataArray[$row['catid']]['camaliga'][$camid] = [];
-                $dataArray[$row['catid']]['camaliga'][$camid]['header'] = $row['camtitle'];
-                $dataArray[$row['catid']]['camaliga'][$camid]['shortdesc'] = $row['shortdesc'];
-                $dataArray[$row['catid']]['camaliga'][$camid]['longdesc'] = $row['longdesc'];
-                $dataArray[$row['catid']]['camaliga'][$camid]['link'] = $row['link'];
-                $noData = false;
-            }
-        }
-
-        $this->view->assign('elements', $dataArray);
-        $this->view->assign('nodata', $noData);
-        $this->view->assign('childs', $childs);
-        $this->view->assign('uid', $this->cObj->data['uid']);
-        $this->view->assign('pids', $pidsArray);
-    }
-
-    /**
-     * action Camaliga + UI
-     */
-    public function camaliga_ui_accordionAction()
-    {
-        $this->camaligaAction();
     }
 }

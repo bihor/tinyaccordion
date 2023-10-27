@@ -6,8 +6,26 @@
 			<trans-unit id="tinyaccordion_title" xml:space="preserve">
 				<source>TinyAccordion</source>
 			</trans-unit>
+			<trans-unit id="tinyaccordion_title_content" xml:space="preserve">
+				<source>TinyAccordion for tt_content</source>
+			</trans-unit>
+			<trans-unit id="tinyaccordion_title_contentui" xml:space="preserve">
+				<source>TinyAccordion for tt_content with jQuery UI</source>
+			</trans-unit>
+			<trans-unit id="tinyaccordion_title_page" xml:space="preserve">
+				<source>TinyAccordion for pages</source>
+			</trans-unit>
+			<trans-unit id="tinyaccordion_title_pageui" xml:space="preserve">
+				<source>TinyAccordion for pages with jQuery UI</source>
+			</trans-unit>
+			<trans-unit id="tinyaccordion_title_news" xml:space="preserve">
+				<source>TinyAccordion for news</source>
+			</trans-unit>
+			<trans-unit id="tinyaccordion_title_newsui" xml:space="preserve">
+				<source>TinyAccordion for news with jQuery UI</source>
+			</trans-unit>
 			<trans-unit id="tinyaccordion_plus_wiz_description" xml:space="preserve">
-				<source>Extension to display tt_content or news elements as an Accordion.</source>
+				<source>Extension to display tt_content, pages or news elements as an Accordion.</source>
 			</trans-unit>
 			<trans-unit id="flexforms_tab.settings" xml:space="preserve">
 				<source>Settings</source>

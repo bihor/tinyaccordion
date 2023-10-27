@@ -14,22 +14,18 @@ $EM_CONF[$_EXTKEY] = array (
   'title' => 'JavaScript Accordion based on TinyAccordion',
   'description' => 'An easy-to-use extension to display pages, tt_content or news elements as an Accordion. Runs with TinyAccordion or jQuery UI-Accordion.',
   'category' => 'plugin',
-  'version' => '7.3.0',
+  'version' => '8.0.0',
   'state' => 'stable',
   'createDirs' => '',
   'clearcacheonload' => false,
   'author' => 'Kurt Gusbeth',
-  'author_company' => 'fixpunkt werbeagentur gmbh',
+  'author_company' => 'fixpunkt für digitales GmbH',
   'constraints' => 
   array (
     'depends' => 
     array (
-      'typo3' => '10.4.6-11.5.99',
+      'typo3' => '11.5.0-12.4.99',
     ),
-    'conflicts' => 
-    array (    ),
-    'suggests' => 
-    array (    ),
   ),
 );
 

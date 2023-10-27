@@ -7,9 +7,33 @@
 				<source>TinyAccordion</source>
 				<target>TinyAccordion</target>
 			</trans-unit>
+			<trans-unit id="tinyaccordion_title_content" xml:space="preserve">
+				<source>TinyAccordion for tt_content</source>
+				<target>TinyAccordion für tt_content</target>
+			</trans-unit>
+			<trans-unit id="tinyaccordion_title_contentui" xml:space="preserve">
+				<source>TinyAccordion for tt_content with jQuery UI</source>
+				<target>TinyAccordion für tt_content mit jQuery UI</target>
+			</trans-unit>
+			<trans-unit id="tinyaccordion_title_page" xml:space="preserve">
+				<source>TinyAccordion for pages</source>
+				<target>TinyAccordion für pages</target>
+			</trans-unit>
+			<trans-unit id="tinyaccordion_title_pageui" xml:space="preserve">
+				<source>TinyAccordion for pages with jQuery UI</source>
+				<target>TinyAccordion für pages mit jQuery UI</target>
+			</trans-unit>
+			<trans-unit id="tinyaccordion_title_news" xml:space="preserve">
+				<source>TinyAccordion for news</source>
+				<target>TinyAccordion für news</target>
+			</trans-unit>
+			<trans-unit id="tinyaccordion_title_newsui" xml:space="preserve">
+				<source>TinyAccordion for news with jQuery UI</source>
+				<target>TinyAccordion für news mit jQuery UI</target>
+			</trans-unit>
 			<trans-unit id="tinyaccordion_plus_wiz_description" xml:space="preserve" approved="yes">
 				<source>Extension to display tt_content or news elements as an Accordion.</source>
-				<target>Extension zum anzeigen von tt_content- oder news-Elementen als ein Accordion.</target>
+				<target>Extension zum anzeigen von tt_content-, pages- oder news-Elementen als ein Accordion.</target>
 			</trans-unit>
 			<trans-unit id="flexforms_tab.settings" xml:space="preserve" approved="yes">
 				<source>Settings</source>

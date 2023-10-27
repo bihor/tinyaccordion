@@ -7,8 +7,4 @@ plugin.tx_tinyaccordion {
 		# cat=plugin.tx_tinyaccordion/file; type=string; label=Path to template layouts (FE)
 		layoutRootPath = EXT:tinyaccordion/Resources/Private/Layouts/
 	}
-	settings {
-		# Not in use anymore, because it is now part of the template!
-		jsFile = EXT:tinyaccordion/Resources/Public/Scripts/packed.js
-	}
 }

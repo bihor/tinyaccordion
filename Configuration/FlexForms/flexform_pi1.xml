@@ -8,49 +8,6 @@
         </TCEforms>
         <type>array</type>
         <el>
-          <switchableControllerActions>
-          <TCEforms>
-          <label>LLL:EXT:tinyaccordion/Resources/Private/Language/locallang_be.xml:flexforms_general.mode</label>
-          <config>
-          <type>select</type>
-		  <renderType>selectSingle</renderType>
-          <items>
-            <numIndex index="0">
-                <numIndex index="0">tt_content + TinyAccordion</numIndex>
-                <numIndex index="1">Selection->content</numIndex>
-            </numIndex>
-            <numIndex index="1">
-                <numIndex index="0">tt_content + UI-Accordion</numIndex>
-                <numIndex index="1">Selection->content_ui_accordion</numIndex>
-            </numIndex>
-            <numIndex index="2">
-                <numIndex index="0">pages + tt_content + TinyAccordion</numIndex>
-                <numIndex index="1">Selection->pages</numIndex>
-            </numIndex>
-            <numIndex index="3">
-                <numIndex index="0">pages + tt_content + UI-Accordion</numIndex>
-                <numIndex index="1">Selection->pages_ui_accordion</numIndex>
-            </numIndex>
-            <numIndex index="5">
-                <numIndex index="0">news + TinyAccordion</numIndex>
-                <numIndex index="1">Selection->news</numIndex>
-            </numIndex>
-            <numIndex index="6">
-                <numIndex index="0">news + UI-Accordion</numIndex>
-                <numIndex index="1">Selection->news_ui_accordion</numIndex>
-            </numIndex>
-            <numIndex index="10">
-                <numIndex index="0">Camaliga + TinyAccordion</numIndex>
-                <numIndex index="1">Selection->camaliga</numIndex>
-            </numIndex>
-            <numIndex index="11">
-                <numIndex index="0">Camaliga + UI-Accordion</numIndex>
-                <numIndex index="1">Selection->camaliga_ui_accordion</numIndex>
-            </numIndex>
-            </items>
-          </config>
-          </TCEforms>
-         </switchableControllerActions>
          <settings.flexform.sortMode>
           <TCEforms>
           <label>LLL:EXT:tinyaccordion/Resources/Private/Language/locallang_be.xml:flexforms_general.sortMode</label>
