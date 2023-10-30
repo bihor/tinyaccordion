@@ -193,6 +193,7 @@ class SelectionController extends ActionController
     public function content_ui_accordionAction(): ResponseInterface
     {
         $this->contentAction();
+        return $this->htmlResponse();
     }
 
     /**
@@ -344,6 +345,7 @@ class SelectionController extends ActionController
     public function pages_ui_accordionAction(): ResponseInterface
     {
         $this->pagesAction();
+        return $this->htmlResponse();
     }
 
     /**
@@ -409,7 +411,7 @@ class SelectionController extends ActionController
             $statement = $queryBuilder->execute();
             
             while ($row = $statement->fetch()) {
-                if (!is_array($dataArray[$row['catid']])) {
+                if (isset($row['catid']) && !isset($dataArray[$row['catid']])) {
                     $dataArray[$row['catid']] = [];
                     $dataArray[$row['catid']]['news'] = [];
                 }
@@ -437,5 +439,6 @@ class SelectionController extends ActionController
     public function news_ui_accordionAction(): ResponseInterface
     {
         $this->newsAction();
+        return $this->htmlResponse();
     }
 }

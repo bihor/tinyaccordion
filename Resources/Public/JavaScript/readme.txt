@@ -1,4 +1,4 @@
-This links does not work any more:
+This links does not work anymore:
 
 License:
 http://forum.scriptiny.com/index.php?app=downloads&showfile=5

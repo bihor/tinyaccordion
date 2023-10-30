@@ -2,10 +2,10 @@
 
 version 8.0.0
 
-JavaScript Accordion based on TinyAccordion.
+JavaScript Accordion based on the old TinyAccordion.
 
 An easy-to-use extension to display pages, tt_content or news elements as an accordion.
-Runs with TinyAccordion or jQuery UI-Accordion.
+Runs with the old TinyAccordion or jQuery UI-Accordion.
 
 You find the documentation here:
 https://docs.typo3.org/p/quizpalme/tinyaccordion/master/en-us/

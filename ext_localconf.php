@@ -53,7 +53,7 @@ call_user_func(
             'Tinyaccordion',
             'Page',
             [
-                SelectionController::class => 'page'
+                SelectionController::class => 'pages'
             ],
             [
                 SelectionController::class => ''
@@ -63,7 +63,7 @@ call_user_func(
             'Tinyaccordion',
             'Pageui',
             [
-                SelectionController::class => 'page_ui_accordion'
+                SelectionController::class => 'pages_ui_accordion'
             ],
             [
                 SelectionController::class => ''
@@ -73,7 +73,7 @@ call_user_func(
         // wizards
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
          'mod {
-			wizards.newContentElement.wizardItems.plugins {
+			wizards.newContentElement.wizardItems.tinyaccordion {
 			    header = Tinyaccordion
 				elements {
 					tinyaccordion_content {
@@ -135,5 +135,9 @@ call_user_func(
 			}
 	     }'
         );
+        
+        // Register switchableControllerActions plugin migrator
+        $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['switchableControllerActionsPluginUpdaterTinyaccordion']
+            = SwitchableControllerActionsPluginUpdater::class;
     }
 );

@@ -234,4 +234,16 @@ ChangeLog
 
          Replacement of the Viewhelper tiny:addPublicResources. It is now deprecated. Use f:asset.script instead.
 
+.. container:: table-row
+
+   Version
+         8.0.0
+
+   Changes
+        Breaking: all plugins must be changed via an update-script (in the install-tool)!
+
+        Breaking: the Viewhelper cam:addPublicResources was removed.
+
+        Breaking: removed the templates for Camaliga (can be solved with Camaliga).
+
 .. ###### END~OF~TABLE ######
