@@ -1,6 +1,6 @@
 # tinyaccordion
 
-version 8.0.0
+version 8.1.0
 
 JavaScript Accordion based on the old TinyAccordion.
 
@@ -15,3 +15,7 @@ Changes in version 8.0:
 - Breaking: all plugins must be changed via an update-script (in the install-tool)!
 - Breaking: the Viewhelper cam:addPublicResources was removed.
 - Breaking: removed the templates for Camaliga (can be solved with Camaliga).
+
+Changes in version 8.1:
+- Refactored with the rector-tool.
+- setup.txt and constants.txt renamed to .typoscript.

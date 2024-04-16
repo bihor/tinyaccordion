@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Quizpalme\Tinyaccordion\Controller;
 
+use TYPO3\CMS\Core\Context\Context;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
@@ -72,7 +73,7 @@ class SelectionController extends ActionController
         $this->cObj = $this->configurationManager->getContentObject();
 
         if (!($this->cObj->data['pages'] == '')) {
-            $pid = addslashes($this->cObj->data['pages']);
+            $pid = addslashes((string) $this->cObj->data['pages']);
         } else {
             // Unter-Ordner mit Dokumenten finden
             // Query aufbauen
@@ -99,7 +100,7 @@ class SelectionController extends ActionController
     public function contentAction(): ResponseInterface
     {
         $pids = $this->getPidAndInit();
-        $languageAspect = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Context\Context::class)->getAspect('language');
+        $languageAspect = GeneralUtility::makeInstance(Context::class)->getAspect('language');
         $sys_language_uid = intval($languageAspect->getId());
         $pidsArray = explode(',', $pids);
         $dataArray = [];
@@ -146,7 +147,7 @@ class SelectionController extends ActionController
                 //$whereCType = '';
             } else {
                 $queryBuilder->andWhere(
-                    $queryBuilder->expr()->orX(
+                    $queryBuilder->expr()->or(
                         $queryBuilder->expr()->eq('CType', $queryBuilder->createNamedParameter('text')),
                         $queryBuilder->expr()->eq('CType', $queryBuilder->createNamedParameter('table')),
                         $queryBuilder->expr()->eq('CType', $queryBuilder->createNamedParameter('textpic')),
@@ -203,7 +204,7 @@ class SelectionController extends ActionController
     public function pagesAction(): ResponseInterface
     {
         $pids = $this->getPidAndInit();
-        $languageAspect = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Context\Context::class)->getAspect('language');
+        $languageAspect = GeneralUtility::makeInstance(Context::class)->getAspect('language');
         $sys_language_uid = intval($languageAspect->getId());
         $pidsArray = explode(',', $pids);
         $dataArray = [];
@@ -295,7 +296,7 @@ class SelectionController extends ActionController
             //$whereCType = '';
         } else {
             $queryBuilder->andWhere(
-                $queryBuilder->expr()->orX(
+                $queryBuilder->expr()->or(
                     $queryBuilder->expr()->eq('CType', $queryBuilder->createNamedParameter('text')),
                     $queryBuilder->expr()->eq('CType', $queryBuilder->createNamedParameter('table')),
                     $queryBuilder->expr()->eq('CType', $queryBuilder->createNamedParameter('textpic')),
@@ -355,7 +356,7 @@ class SelectionController extends ActionController
     public function newsAction(): ResponseInterface
     {
         $pids = $this->getPidAndInit();
-        $languageAspect = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Context\Context::class)->getAspect('language');
+        $languageAspect = GeneralUtility::makeInstance(Context::class)->getAspect('language');
         $sys_language_uid = intval($languageAspect->getId());
         $pidsArray = explode(',', $pids);
         $dataArray = [];
