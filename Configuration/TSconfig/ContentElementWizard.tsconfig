@@ -1,0 +1,62 @@
+mod {
+    wizards.newContentElement.wizardItems.tinyaccordion {
+        header = Tinyaccordion
+        elements {
+            tinyaccordion_content {
+                iconIdentifier = ext-tinyaccordion-wizard-icon
+                title = LLL:EXT:tinyaccordion/Resources/Private/Language/locallang_be.xml:tinyaccordion_title_content
+                description = LLL:EXT:tinyaccordion/Resources/Private/Language/locallang_be.xml:tinyaccordion_plus_wiz_description
+                tt_content_defValues {
+                    CType = list
+                    list_type = tinyaccordion_content
+                }
+            }
+            tinyaccordion_contentui {
+                iconIdentifier = ext-tinyaccordion-wizard-icon
+                title = LLL:EXT:tinyaccordion/Resources/Private/Language/locallang_be.xml:tinyaccordion_title_contentui
+                description = LLL:EXT:tinyaccordion/Resources/Private/Language/locallang_be.xml:tinyaccordion_plus_wiz_description
+                tt_content_defValues {
+                    CType = list
+                    list_type = tinyaccordion_contentui
+                }
+            }
+            tinyaccordion_page {
+                iconIdentifier = ext-tinyaccordion-wizard-icon
+                title = LLL:EXT:tinyaccordion/Resources/Private/Language/locallang_be.xml:tinyaccordion_title_page
+                description = LLL:EXT:tinyaccordion/Resources/Private/Language/locallang_be.xml:tinyaccordion_plus_wiz_description
+                tt_content_defValues {
+                    CType = list
+                    list_type = tinyaccordion_page
+                }
+            }
+            tinyaccordion_pageui {
+                iconIdentifier = ext-tinyaccordion-wizard-icon
+                title = LLL:EXT:tinyaccordion/Resources/Private/Language/locallang_be.xml:tinyaccordion_title_pageui
+                description = LLL:EXT:tinyaccordion/Resources/Private/Language/locallang_be.xml:tinyaccordion_plus_wiz_description
+                tt_content_defValues {
+                    CType = list
+                    list_type = tinyaccordion_pageui
+                }
+            }
+            tinyaccordion_news {
+                iconIdentifier = ext-tinyaccordion-wizard-icon
+                title = LLL:EXT:tinyaccordion/Resources/Private/Language/locallang_be.xml:tinyaccordion_title_news
+                description = LLL:EXT:tinyaccordion/Resources/Private/Language/locallang_be.xml:tinyaccordion_plus_wiz_description
+                tt_content_defValues {
+                    CType = list
+                    list_type = tinyaccordion_news
+                }
+            }
+            tinyaccordion_newsui {
+                iconIdentifier = ext-tinyaccordion-wizard-icon
+                title = LLL:EXT:tinyaccordion/Resources/Private/Language/locallang_be.xml:tinyaccordion_title_newsui
+                description = LLL:EXT:tinyaccordion/Resources/Private/Language/locallang_be.xml:tinyaccordion_plus_wiz_description
+                tt_content_defValues {
+                    CType = list
+                    list_type = tinyaccordion_newsui
+                }
+            }
+        }
+        show = *
+    }
+}

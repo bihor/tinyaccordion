@@ -3,13 +3,10 @@
   <sheets>
     <sDEF>
       <ROOT>
-        <TCEforms>
           <sheetTitle>LLL:EXT:tinyaccordion/Resources/Private/Language/locallang_be.xml:flexforms_tab.settings</sheetTitle>
-        </TCEforms>
         <type>array</type>
         <el>
          <settings.flexform.sortMode>
-          <TCEforms>
           <label>LLL:EXT:tinyaccordion/Resources/Private/Language/locallang_be.xml:flexforms_general.sortMode</label>
           <config>
           <type>select</type>
@@ -25,10 +22,8 @@
             </numIndex>
             </items>
           </config>
-          </TCEforms>
          </settings.flexform.sortMode>
          <settings.flexform.sortorder>
-          <TCEforms>
           <label>LLL:EXT:tinyaccordion/Resources/Private/Language/locallang_be.xml:flexforms_general.sort</label>
           <config>
           <type>select</type>
@@ -44,10 +39,8 @@
             </numIndex>
             </items>
           </config>
-          </TCEforms>
          </settings.flexform.sortorder>
          <settings.flexform.select>
-          <TCEforms>
           <label>LLL:EXT:tinyaccordion/Resources/Private/Language/locallang_be.xml:flexforms_general.select</label>
           <config>
           <type>select</type>
@@ -63,10 +56,8 @@
             </numIndex>
             </items>
           </config>
-          </TCEforms>
          </settings.flexform.select>
          <settings.flexform.nested>
-          <TCEforms>
           <label>LLL:EXT:tinyaccordion/Resources/Private/Language/locallang_be.xml:flexforms_general.nested</label>
           <config>
           <type>select</type>
@@ -82,10 +73,8 @@
             </numIndex>
             </items>
           </config>
-          </TCEforms>
          </settings.flexform.nested>
          <settings.flexform.renderEverything>
-          <TCEforms>
           <label>LLL:EXT:tinyaccordion/Resources/Private/Language/locallang_be.xml:flexforms_general.renderEverything</label>
           <config>
           <type>select</type>
@@ -101,10 +90,8 @@
             </numIndex>
             </items>
           </config>
-          </TCEforms>
          </settings.flexform.renderEverything>
 		 <settings.flexform.colPos>
-          <TCEforms>
            <label>LLL:EXT:tinyaccordion/Resources/Private/Language/locallang_be.xml:flexforms_general.colPos</label>
            <config>
                     <type>input</type>
@@ -112,20 +99,16 @@
                     <max>5</max>
                     <eval>trim</eval>
            </config>
-          </TCEforms>
 		 </settings.flexform.colPos>
         </el>
       </ROOT>
     </sDEF>
     <sLevel1>
       <ROOT>
-        <TCEforms>
           <sheetTitle>LLL:EXT:tinyaccordion/Resources/Private/Language/locallang_be.xml:flexforms_tab.level1</sheetTitle>
-        </TCEforms>
         <type>array</type>
         <el>
          <settings.flexform.header1>
-          <TCEforms>
           <label>LLL:EXT:tinyaccordion/Resources/Private/Language/locallang_be.xml:flexforms_general.header</label>
           <config>
           <type>select</type>
@@ -161,10 +144,8 @@
             <size>1</size>
             <default>h4</default>
           </config>
-          </TCEforms>
          </settings.flexform.header1>
          <settings.flexform.expandable1>
-          <TCEforms>
           <label>LLL:EXT:tinyaccordion/Resources/Private/Language/locallang_be.xml:flexforms_general.expandable</label>
           <config>
           <type>select</type>
@@ -184,10 +165,8 @@
             <size>1</size>
             <default>0</default>
           </config>
-          </TCEforms>
          </settings.flexform.expandable1>
          <settings.flexform.index1>
-          <TCEforms>
           <label>LLL:EXT:tinyaccordion/Resources/Private/Language/locallang_be.xml:flexforms_general.index</label>
           <config>
           <type>select</type>
@@ -246,20 +225,16 @@
             <maxitems>1</maxitems>
             <size>1</size>
           </config>
-          </TCEforms>
          </settings.flexform.index1>
         </el>
       </ROOT>
     </sLevel1>
     <sLevel2>
       <ROOT>
-        <TCEforms>
           <sheetTitle>LLL:EXT:tinyaccordion/Resources/Private/Language/locallang_be.xml:flexforms_tab.level2</sheetTitle>
-        </TCEforms>
         <type>array</type>
         <el>
          <settings.flexform.header2>
-          <TCEforms>
           <label>LLL:EXT:tinyaccordion/Resources/Private/Language/locallang_be.xml:flexforms_general.header</label>
           <config>
           <type>select</type>
@@ -295,10 +270,8 @@
             <size>1</size>
             <default>h4</default>
           </config>
-          </TCEforms>
          </settings.flexform.header2>
          <settings.flexform.expandable2>
-          <TCEforms>
           <label>LLL:EXT:tinyaccordion/Resources/Private/Language/locallang_be.xml:flexforms_general.expandable</label>
           <config>
           <type>select</type>
@@ -318,10 +291,8 @@
             <size>1</size>
             <default>1</default>
           </config>
-          </TCEforms>
          </settings.flexform.expandable2>
          <settings.flexform.index2>
-          <TCEforms>
           <label>LLL:EXT:tinyaccordion/Resources/Private/Language/locallang_be.xml:flexforms_general.index</label>
           <config>
           <type>select</type>
@@ -380,7 +351,6 @@
             <maxitems>1</maxitems>
             <size>1</size>
           </config>
-          </TCEforms>
          </settings.flexform.index2>
         </el>
       </ROOT>

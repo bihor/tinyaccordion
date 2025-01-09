@@ -16,7 +16,7 @@ use Psr\Http\Message\ResponseInterface;
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2013 Kurt Gusbeth <info@myquizandpoll.de>
+ *  (c) 2013 Kurt Gusbeth <info@quizpalme.de>
  *
  *  All rights reserved
  *
@@ -60,7 +60,8 @@ class SelectionController extends ActionController
             'source' => $uid,
             'dontCheckPid' => 1
         ];
-        return $GLOBALS['TSFE']->cObj->cObjGetSingle('RECORDS', $conf);
+        $frontendController = $this->request->getAttribute('frontend.controller');
+        return $frontendController->cObj->cObjGetSingle('RECORDS', $conf);
     }
 
     /**
@@ -70,24 +71,29 @@ class SelectionController extends ActionController
      */
     private function getPidAndInit(): string
     {
-        $this->cObj = $this->configurationManager->getContentObject();
+        $this->cObj = $this->request->getAttribute('currentContentObject');
+        $pid = 0;
 
         if (!($this->cObj->data['pages'] == '')) {
             $pid = addslashes((string) $this->cObj->data['pages']);
         } else {
             // Unter-Ordner mit Dokumenten finden
+            $pageArguments = $this->request->getAttribute('routing');
+            $pageId = $pageArguments->getPageId();
             // Query aufbauen
             $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionForTable('tt_content')->createQueryBuilder();
-            $res = $queryBuilder ->select('uid') -> from ('pages') ->where( $queryBuilder->expr()->eq('pid', intval($GLOBALS['TSFE']->id)) )
-            ->andWhere(  $queryBuilder->expr()->eq('doktype', 254) )->setMaxResults(1);
-            $result = $res -> orderBy('sorting', 'ASC')
-                -> execute();
-            foreach($result as $row) {
+            $result = $queryBuilder ->select('uid') -> from ('pages')
+                ->where( $queryBuilder->expr()->eq('pid', intval($pageId)) )
+                ->andWhere(  $queryBuilder->expr()->eq('doktype', 254) )->setMaxResults(1)
+                -> orderBy('sorting', 'ASC')
+                -> executeQuery();
+            foreach($result->fetchAllAssociative() as $row) {
                $pid = $row['uid'];
             }
         }
         if (!$pid) {
-            $pid = $GLOBALS['TSFE']->id;
+            $pageArguments = $this->request->getAttribute('routing');
+            $pid = $pageArguments->getPageId();
         }
 
         return (string) $pid;
@@ -128,7 +134,7 @@ class SelectionController extends ActionController
             
             if ($mode) {
                 $queryBuilder->where(
-                    $queryBuilder->expr()->eq('pid', $queryBuilder->createNamedParameter(intval($pid), \PDO::PARAM_INT))
+                    $queryBuilder->expr()->eq('pid', $queryBuilder->createNamedParameter(intval($pid), Connection::PARAM_INT))
                 );
             } else {
                 $queryBuilder->where(
@@ -140,7 +146,7 @@ class SelectionController extends ActionController
                 //$whereColPos = '';
             } else {
                 $queryBuilder->andWhere(
-                    $queryBuilder->expr()->eq('colPos', $queryBuilder->createNamedParameter($colPos, \PDO::PARAM_INT))
+                    $queryBuilder->expr()->eq('colPos', $queryBuilder->createNamedParameter($colPos, Connection::PARAM_INT))
                 );
             }
             if ($renderEverything) {
@@ -157,14 +163,14 @@ class SelectionController extends ActionController
             }
             
             $queryBuilder->andWhere(
-                $queryBuilder->expr()->eq('sys_language_uid', $queryBuilder->createNamedParameter($sys_language_uid, \PDO::PARAM_INT))
+                $queryBuilder->expr()->eq('sys_language_uid', $queryBuilder->createNamedParameter($sys_language_uid, Connection::PARAM_INT))
             );
 
             $queryBuilder->orderBy('colPos')->addOrderBy('sorting', $order);
             //debug($queryBuilder->getSQL());
-            $statement = $queryBuilder->execute();
+            $statement = $queryBuilder->executeQuery();
             
-            foreach ($statement->fetchAll() as $row) {
+            foreach ($statement->fetchAllAssociative() as $row) {
                     $dataArray[$row['uid']] = [];
                     $dataArray[$row['uid']]['pid'] = $row['pid'];
                     $dataArray[$row['uid']]['header'] = $row['header'];
@@ -238,7 +244,7 @@ class SelectionController extends ActionController
             
             if ($mode) {
                 $queryBuilder->where(
-                    $queryBuilder->expr()->eq($select, $queryBuilder->createNamedParameter(intval($pid), \PDO::PARAM_INT)),
+                    $queryBuilder->expr()->eq($select, $queryBuilder->createNamedParameter(intval($pid), Connection::PARAM_INT)),
                     $queryBuilder->expr()->eq('doktype', 1)
                 );
             } else {
@@ -249,14 +255,14 @@ class SelectionController extends ActionController
             }
             
             $queryBuilder->andWhere(
-                $queryBuilder->expr()->eq('sys_language_uid', $queryBuilder->createNamedParameter($sys_language_uid, \PDO::PARAM_INT))
+                $queryBuilder->expr()->eq('sys_language_uid', $queryBuilder->createNamedParameter($sys_language_uid, Connection::PARAM_INT))
             );
             
             $queryBuilder->orderBy('sorting', $order);
             //debug($queryBuilder->getSQL());
-            $statement = $queryBuilder->execute();
+            $statement = $queryBuilder->executeQuery();
             
-            foreach ($statement->fetchAll() as $row) {
+            foreach ($statement->fetchAllAssociative() as $row) {
                 $uid = ($sys_language_uid > 0) ? $row['l10n_parent'] : $row['uid'];
                 $uids .= ($uids) ? ',' . $uid : $uid;
                 $foundPids[] = $uid;
@@ -289,7 +295,7 @@ class SelectionController extends ActionController
             //$whereColPos = '';
         } else {
             $queryBuilder->andWhere(
-                $queryBuilder->expr()->eq('colPos', $queryBuilder->createNamedParameter($colPos, \PDO::PARAM_INT))
+                $queryBuilder->expr()->eq('colPos', $queryBuilder->createNamedParameter($colPos, Connection::PARAM_INT))
             );
         }
         if ($renderEverything) {
@@ -306,14 +312,14 @@ class SelectionController extends ActionController
         }
         
         $queryBuilder->andWhere(
-            $queryBuilder->expr()->eq('sys_language_uid', $queryBuilder->createNamedParameter($sys_language_uid, \PDO::PARAM_INT))
+            $queryBuilder->expr()->eq('sys_language_uid', $queryBuilder->createNamedParameter($sys_language_uid, Connection::PARAM_INT))
         );
         
         $queryBuilder->orderBy('sorting', $order);
         //debug($queryBuilder->getSQL());
-        $statement = $queryBuilder->execute();
+        $statement = $queryBuilder->executeQuery();
         
-        foreach ($statement->fetchAll() as $row) {
+        foreach ($statement->fetchAllAssociative() as $row) {
             $uid = $row['uid'];
             $pid = $row['pid'];
             $dataArray[$pid]['elements'][$uid] = [];
@@ -397,7 +403,7 @@ class SelectionController extends ActionController
             
             if ($mode) {
                 $queryBuilder->where(
-                    $queryBuilder->expr()->eq('tx_news_domain_model_news.pid', $queryBuilder->createNamedParameter(intval($pid), \PDO::PARAM_INT))
+                    $queryBuilder->expr()->eq('tx_news_domain_model_news.pid', $queryBuilder->createNamedParameter(intval($pid), Connection::PARAM_INT))
                 );
             } else {
                 $queryBuilder->where(
@@ -405,13 +411,13 @@ class SelectionController extends ActionController
                 );
             }
             $queryBuilder->andWhere(
-                $queryBuilder->expr()->eq('tx_news_domain_model_news.sys_language_uid', $queryBuilder->createNamedParameter($sys_language_uid, \PDO::PARAM_INT))
+                $queryBuilder->expr()->eq('tx_news_domain_model_news.sys_language_uid', $queryBuilder->createNamedParameter($sys_language_uid, Connection::PARAM_INT))
             );
             $queryBuilder->orderBy('cattitle', $order)->addOrderBy('tx_news_domain_model_news.datetime', $order);
             //debug($queryBuilder->getSQL());
-            $statement = $queryBuilder->execute();
+            $statement = $queryBuilder->executeQuery();
             
-            while ($row = $statement->fetch()) {
+            while ($row = $statement->fetchAssociative()) {
                 if (isset($row['catid']) && !isset($dataArray[$row['catid']])) {
                     $dataArray[$row['catid']] = [];
                     $dataArray[$row['catid']]['news'] = [];
