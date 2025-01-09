@@ -1,6 +1,6 @@
 # tinyaccordion
 
-version 8.1.0
+version 8.2.0
 
 JavaScript Accordion based on the old TinyAccordion.
 
@@ -19,3 +19,6 @@ Changes in version 8.0:
 Changes in version 8.1:
 - Refactored with the rector-tool.
 - setup.txt and constants.txt renamed to .typoscript.
+
+Changes in version 8.2:
+- Compatibility to TYPO3 13 added.
