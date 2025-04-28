@@ -1,18 +1,4 @@
-﻿.. include:: Images.txt
-
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+﻿.. include:: /Includes.rst.txt
 
 
 Screenshots
@@ -20,14 +6,14 @@ Screenshots
 
 Some examples:
 
-|img-3|
+.. include:: /Images/manual_html_2a34f026.rst.txt
 
-*Example 1: Example for tt\_content*
+   *Example 1: Example for tt\_content*
 
-|img-4|
+.. include:: /Images/manual_html_4b36cb0c.rst.txt
 
-*Example 2: Example for pages, news or Camaliga*
+   *Example 2: Example for pages, news or Camaliga*
 
-|img-5|
+.. include:: /Images/manual_html_m6bc7cd6.rst.txt
 
-*Example 3: jQuery UI Accordion with pages, news or Camaliga*
+   *Example 3: jQuery UI Accordion with pages, news or Camaliga*

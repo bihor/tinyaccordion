@@ -1,18 +1,4 @@
-﻿.. include:: Images.txt
-
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+﻿.. include:: /Includes.rst.txt
 
 
 EXT: JavaScript Accordion - based on TinyAccordion
@@ -22,7 +8,7 @@ Extension Key: tinyaccordion
 
 Keywords: accordion, content, elements
 
-Copyright 2022, Kurt Gusbeth
+Copyright 2025, Kurt Gusbeth
 
 This document is published under the Open Content License
 
@@ -41,7 +27,5 @@ The content of this document is related to TYPO3
    Configuration/Index
    Tutorial/Index
    KnownProblems/Index
-   Updating4/Index
-   Updating5/Index
    Updating6/Index
    Changelog/Index

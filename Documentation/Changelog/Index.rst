@@ -1,18 +1,4 @@
-﻿
-
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+﻿.. include:: /Includes.rst.txt
 
 
 ChangeLog
@@ -177,7 +163,7 @@ ChangeLog
 
    Changes
          Removed the includeJS: page.includeJS.tx_tinyaccordion.
-         
+
          The JavaScript-file for a TinyAccordion is now included in the template by a ViewHelper. If you use custom templates, you need to add the ViewHelper to your template!
 
 .. container:: table-row
@@ -195,9 +181,9 @@ ChangeLog
 
    Changes
          Old update-script removed.
-         
+
          tt_news-support replaced by news-support (maybe not working correct).
-         
+
          Runs now with TYPO3 9 and 10; typo3db_legacy not needed anymore.
 
 .. container:: table-row
@@ -245,5 +231,15 @@ ChangeLog
         Breaking: the Viewhelper cam:addPublicResources was removed.
 
         Breaking: removed the templates for Camaliga (can be solved with Camaliga).
+
+.. container:: table-row
+
+   Version
+         8.2.1
+
+   Changes
+        Compatibility to TYPO3 13 added.
+
+        Documentation.
 
 .. ###### END~OF~TABLE ######

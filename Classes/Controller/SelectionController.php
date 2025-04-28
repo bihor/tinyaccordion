@@ -111,9 +111,9 @@ class SelectionController extends ActionController
         $pidsArray = explode(',', $pids);
         $dataArray = [];
         $noData = true;
-        $order = ($this->settings['flexform']['sortorder']=='desc') ? 'DESC' : 'ASC';
-        $mode = ($this->settings['flexform']['sortMode']=='1') ? true : false;
-        $renderEverything = ($this->settings['flexform']['renderEverything']=='1') ? true : false;
+        $order = (isset($this->settings['flexform']['sortorder']) && $this->settings['flexform']['sortorder']=='desc') ? 'DESC' : 'ASC';
+        $mode = (isset($this->settings['flexform']['sortMode']) && $this->settings['flexform']['sortMode']=='1') ? true : false;
+        $renderEverything = (isset($this->settings['flexform']['renderEverything']) && $this->settings['flexform']['renderEverything']=='1') ? true : false;
         $colPos = intval($this->settings['flexform']['colPos']);
         if ($mode) {
             $pidsForeach = $pidsArray;
@@ -123,7 +123,7 @@ class SelectionController extends ActionController
 
         // Dokumente holen
         foreach ($pidsForeach as $pid) {
-            
+
             $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionForTable('tt_content')->createQueryBuilder();
             $queryBuilder ->select(...[
                 'uid',
@@ -131,7 +131,7 @@ class SelectionController extends ActionController
                 'header',
                 'tstamp'
             ]) -> from ('tt_content');
-            
+
             if ($mode) {
                 $queryBuilder->where(
                     $queryBuilder->expr()->eq('pid', $queryBuilder->createNamedParameter(intval($pid), Connection::PARAM_INT))
@@ -141,7 +141,7 @@ class SelectionController extends ActionController
                     $queryBuilder->expr()->in('pid', $queryBuilder->createNamedParameter($pidsArray, Connection::PARAM_INT_ARRAY))
                 );
             }
-            
+
             if ($colPos == -1) {
                 //$whereColPos = '';
             } else {
@@ -161,7 +161,7 @@ class SelectionController extends ActionController
                     )
                 );
             }
-            
+
             $queryBuilder->andWhere(
                 $queryBuilder->expr()->eq('sys_language_uid', $queryBuilder->createNamedParameter($sys_language_uid, Connection::PARAM_INT))
             );
@@ -169,7 +169,7 @@ class SelectionController extends ActionController
             $queryBuilder->orderBy('colPos')->addOrderBy('sorting', $order);
             //debug($queryBuilder->getSQL());
             $statement = $queryBuilder->executeQuery();
-            
+
             foreach ($statement->fetchAllAssociative() as $row) {
                     $dataArray[$row['uid']] = [];
                     $dataArray[$row['uid']]['pid'] = $row['pid'];
@@ -215,9 +215,9 @@ class SelectionController extends ActionController
         $pidsArray = explode(',', $pids);
         $dataArray = [];
         $noData = true;
-        $order = ($this->settings['flexform']['sortorder']=='desc') ? 'DESC' : 'ASC';
-        $mode = ($this->settings['flexform']['sortMode']=='1') ? true : false;
-        $renderEverything = ($this->settings['flexform']['renderEverything']=='1') ? true : false;
+        $order = (isset($this->settings['flexform']['sortorder']) && $this->settings['flexform']['sortorder']=='desc') ? 'DESC' : 'ASC';
+        $mode = (isset($this->settings['flexform']['sortMode']) && $this->settings['flexform']['sortMode']=='1') ? true : false;
+        $renderEverything = (isset($this->settings['flexform']['renderEverything']) && $this->settings['flexform']['renderEverything']=='1') ? true : false;
         $colPos = intval($this->settings['flexform']['colPos']);
         $select = ($this->settings['flexform']['select']=='pid') ? 'pid' : 'uid';
         if ($mode) {
@@ -230,7 +230,7 @@ class SelectionController extends ActionController
 
         // Ordner holen
         foreach ($pidsForeach as $pid) {
-            
+
             $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionForTable('pages')->createQueryBuilder();
             $queryBuilder ->select(...[
                 'uid',
@@ -241,7 +241,7 @@ class SelectionController extends ActionController
                 'abstract',
                 'description'
             ]) -> from ('pages');
-            
+
             if ($mode) {
                 $queryBuilder->where(
                     $queryBuilder->expr()->eq($select, $queryBuilder->createNamedParameter(intval($pid), Connection::PARAM_INT)),
@@ -253,15 +253,15 @@ class SelectionController extends ActionController
                     $queryBuilder->expr()->eq('doktype', 1)
                 );
             }
-            
+
             $queryBuilder->andWhere(
                 $queryBuilder->expr()->eq('sys_language_uid', $queryBuilder->createNamedParameter($sys_language_uid, Connection::PARAM_INT))
             );
-            
+
             $queryBuilder->orderBy('sorting', $order);
             //debug($queryBuilder->getSQL());
             $statement = $queryBuilder->executeQuery();
-            
+
             foreach ($statement->fetchAllAssociative() as $row) {
                 $uid = ($sys_language_uid > 0) ? $row['l10n_parent'] : $row['uid'];
                 $uids .= ($uids) ? ',' . $uid : $uid;
@@ -285,12 +285,12 @@ class SelectionController extends ActionController
             'header',
             'tstamp'
         ]) -> from ('tt_content');
-        
+
         $uidsArray = explode(',', $uids);
         $queryBuilder->where(
             $queryBuilder->expr()->in('pid', $queryBuilder->createNamedParameter($uidsArray, Connection::PARAM_INT_ARRAY))
         );
-        
+
         if ($colPos == -1) {
             //$whereColPos = '';
         } else {
@@ -310,15 +310,15 @@ class SelectionController extends ActionController
                 )
             );
         }
-        
+
         $queryBuilder->andWhere(
             $queryBuilder->expr()->eq('sys_language_uid', $queryBuilder->createNamedParameter($sys_language_uid, Connection::PARAM_INT))
         );
-        
+
         $queryBuilder->orderBy('sorting', $order);
         //debug($queryBuilder->getSQL());
         $statement = $queryBuilder->executeQuery();
-        
+
         foreach ($statement->fetchAllAssociative() as $row) {
             $uid = $row['uid'];
             $pid = $row['pid'];
@@ -328,7 +328,7 @@ class SelectionController extends ActionController
             $dataArray[$pid]['elements'][$uid]['datetime'] = $row['tstamp'];
             $noData = false;
         }
-        
+
         // Dokumente rendern
         if (count($dataArray)>0) {
             foreach ($foundPids as $pid) {
@@ -367,8 +367,9 @@ class SelectionController extends ActionController
         $pidsArray = explode(',', $pids);
         $dataArray = [];
         $noData = true;
-        $order = ($this->settings['flexform']['sortorder']=='desc') ? 'DESC' : 'ASC';
-        $mode = ($this->settings['flexform']['sortMode']=='1') ? true : false;
+        $order = (isset($this->settings['flexform']['sortorder']) && $this->settings['flexform']['sortorder']=='desc') ? 'DESC' : 'ASC';
+        $mode = (isset($this->settings['flexform']['sortMode']) && $this->settings['flexform']['sortMode']=='1') ? true : false;
+
         if ($mode) {
             $pidsForeach = $pidsArray;
         } else {
@@ -400,7 +401,7 @@ class SelectionController extends ActionController
                     $queryBuilder->quoteIdentifier('cat.uid')
                 )
             );
-            
+
             if ($mode) {
                 $queryBuilder->where(
                     $queryBuilder->expr()->eq('tx_news_domain_model_news.pid', $queryBuilder->createNamedParameter(intval($pid), Connection::PARAM_INT))
@@ -416,7 +417,7 @@ class SelectionController extends ActionController
             $queryBuilder->orderBy('cattitle', $order)->addOrderBy('tx_news_domain_model_news.datetime', $order);
             //debug($queryBuilder->getSQL());
             $statement = $queryBuilder->executeQuery();
-            
+
             while ($row = $statement->fetchAssociative()) {
                 if (isset($row['catid']) && !isset($dataArray[$row['catid']])) {
                     $dataArray[$row['catid']] = [];

@@ -6,7 +6,7 @@ foreach (['content', 'contentui', 'page', 'pageui', 'news', 'newsui'] as $plugin
         'Tinyaccordion',
         ucfirst($plugin),
         'LLL:EXT:tinyaccordion/Resources/Private/Language/locallang_be.xml:tinyaccordion_title_' . $plugin,
-        'EXT:tinyaccordion/Resources/Public/Icons/Extension.gif',
+        'ext-tinyaccordion-wizard-icon',
         'tinyaccordion'
     );
 

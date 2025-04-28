@@ -1,0 +1,2 @@
+.. figure:: /Images/manual_html_4b36cb0c.png
+   :class: with-shadow

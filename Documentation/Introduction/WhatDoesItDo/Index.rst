@@ -1,18 +1,4 @@
-﻿
-
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+﻿.. include:: /Includes.rst.txt
 
 
 What does it do?
@@ -43,10 +29,3 @@ Thanks to the
 for giving me the possibility to realize
 `this extension <https://www.fixpunkt.com/webentwicklung/typo3/typo3-extensions/>`_
 and share it with the TYPO3 community.
-
-Attention
----------
-
-.. important::
-
-   If you are using TYPO3 9 and a version below 7, then you will need the extension typo3db_legacy too!

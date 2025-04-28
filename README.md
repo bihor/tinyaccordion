@@ -1,6 +1,6 @@
 # tinyaccordion
 
-version 8.2.0
+version 8.2.1
 
 JavaScript Accordion based on the old TinyAccordion.
 
@@ -22,3 +22,6 @@ Changes in version 8.1:
 
 Changes in version 8.2:
 - Compatibility to TYPO3 13 added.
+
+Changes in version 8.2.1:
+- Small bugfixes. Documentation.
