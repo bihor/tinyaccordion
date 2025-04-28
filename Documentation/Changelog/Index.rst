@@ -235,7 +235,17 @@ ChangeLog
 .. container:: table-row
 
    Version
-         8.2.1
+         8.1.0
+
+   Changes
+        Refactored with the rector-tool.
+
+        setup.txt and constants.txt renamed to .typoscript.
+
+.. container:: table-row
+
+   Version
+         8.2.0/1
 
    Changes
         Compatibility to TYPO3 13 added.
