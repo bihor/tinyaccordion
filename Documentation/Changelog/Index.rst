@@ -252,4 +252,12 @@ ChangeLog
 
         Documentation.
 
+.. container:: table-row
+
+   Version
+         8.2.2
+
+   Changes
+        New home url at GitHub: fixpunkt-com instead of bihor.
+
 .. ###### END~OF~TABLE ######

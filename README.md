@@ -1,6 +1,6 @@
 # tinyaccordion
 
-version 8.2.1
+version 8.2.2
 
 JavaScript Accordion based on the old TinyAccordion.
 
@@ -25,3 +25,6 @@ Changes in version 8.2:
 
 Changes in version 8.2.1:
 - Small bugfixes. Documentation.
+
+Changes in version 8.2.2:
+- New home url: https://github.com/fixpunkt-com/tinyaccordion

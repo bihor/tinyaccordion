@@ -7,10 +7,10 @@
     <extension class="\T3Docs\Typo3DocsTheme\DependencyInjection\Typo3DocsThemeExtension"
                project-home="https://extensions.typo3.org/extension/tinyaccordion"
                project-contact="https://www.fixpunkt.com/webentwicklung/typo3/typo3-extensions/"
-               project-repository="https://github.com/bihor/tinyaccordion"
-               project-issues="https://github.com/bihor/tinyaccordion/issues"
+               project-repository="https://github.com/fixpunkt-com/tinyaccordion"
+               project-issues="https://github.com/fixpunkt-com/tinyaccordion/issues"
                edit-on-github-branch="master"
-               edit-on-github="bihor/tinyaccordion"
+               edit-on-github="fixpunkt-com/tinyaccordion"
                interlink-shortcode="quizpalme/tinyaccordion"
     />
     <project title="JavaScript Accordion based on TinyAccordion"
